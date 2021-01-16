@@ -1,0 +1,30 @@
+# https://github.com/yavisht/deploy-via-surge.sh-github-action-template
+
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to surge
+    steps:
+    - uses: actions/checkout@v2
+    - name: Bundle apps and deploy to surge
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.x
+    - name: Cache NPM dependencies
+      uses: actions/cache@v2
+      with:
+        path: node_modules
+        key: ${{ runner.OS }}-npm-cache
+        restore-keys: |
+          ${{ runner.OS }}-npm-cache
+    # - run: npm install
+    # - run: npm run build
+    - run: npm i -g surge
+    - run: cp -R index.html public/200.html
+    - run: surge . ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_SECRET }}
+      env:
+        CI: true
