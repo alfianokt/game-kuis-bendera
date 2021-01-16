@@ -2,4 +2,4 @@
 
 > Game sederhana untuk menebak bendera negara di seluruh dunia
 
-Bermain : http://kuis-bendera.surge.sh/
+Bermain : https://kuis-bendera.surge.sh/
