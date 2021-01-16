@@ -47,6 +47,29 @@ const showPage = (name) => {
   });
 };
 
+// show list flags
+const listFlags = document.querySelector('#list-flags');
+flags.emoji.forEach((el, index) => {
+  // what i want
+  //
+  // <li>
+  //   <h1>flag</h1>
+  //   flag_name
+  // </li>
+
+  const _li = document.createElement('li');
+  const _h1 = document.createElement('h1');
+  const _p = document.createElement('p');
+
+  _h1.innerText = el;
+  _p.innerText = flags.name.id[index];
+
+  _li.appendChild(_h1);
+  _li.appendChild(_p);
+
+  listFlags.appendChild(_li);
+});
+
 router
   .on('/', () => {
     showPage('home');
