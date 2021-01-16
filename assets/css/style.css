@@ -13,6 +13,11 @@ body {
   justify-items: center;
 }
 
+a {
+  text-decoration: underline;
+  color: #fffffe;
+}
+
 button {
   cursor: pointer;
   width: 100%;
