@@ -24,7 +24,7 @@ jobs:
     # - run: npm install
     # - run: npm run build
     - run: npm i -g surge
-    - run: cp -R index.html public/200.html
+    - run: cp -R index.html 200.html
     - run: surge . ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_SECRET }}
       env:
         CI: true
