@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Kuis Bendera Negara</title>
-  <link rel="icon" class="js-site-favicon" type="image/png  " href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/flag-indonesia_1f1ee-1f1e9.png">
+  <link rel="icon" type="image/png" href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/flag-indonesia_1f1ee-1f1e9.png">
   <!-- fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Neue&display=swap">
   <!-- style   -->
@@ -21,7 +21,7 @@
         </div>
 
         <div>
-          <button data-link="start">▶️ Mulai</button>
+          <button data-link="start">▶️ Main</button>
           <button data-link="learn">📖 Belajar</button>
           <button data-link="about">ℹ️ Tentang</button>
         </div>
@@ -32,29 +32,47 @@
   <section class="dn" id="start">
     <div class="content">
       <div>
-        <div class="title">
+        <div class="title db" id="game-title">
           <h1>Mulai game</h1>
+          <p>Kuis akan dimulai dengan durasi <strong>60 detik</strong> dan jumlah bendera <strong id="count-flags"></strong> yang diacak.</p>
+          <button id="game-start">▶️ Mulai</button>
           <button data-link="home">&laquo; Kembali</button>
         </div>
 
-        <ul>
-          <li>
-            <h1>🇬🇸</h1>
-            South Georgia & South Sandwich Islands
-          </li>
-          <li type="select">
-            <h1>🇬🇸</h1>
-            South Georgia & South Sandwich Islands
-          </li>
-          <li>
-            <h1>🇬🇸</h1>
-            South Georgia & South Sandwich Islands
-          </li>
-          <li>
-            <h1>🇬🇸</h1>
-            South Georgia & South Sandwich Islands
-          </li>
-        </ul>
+        <div class="title dn" id="game-title-result">
+          <h1>✋ Game telah selesai</h1>
+          <p>🎉 Selamat, kamu berhasil menjawab <strong id="game-total-answer"></strong> dan benar <strong id="game-total-correct"></strong></p>
+
+          <button id="game-to-start">&laquo; Kembali</button>
+        </div>
+
+        <div class="title dn" id="game-title-played">
+          <h3 id="timeleft">Sisa waktu : <strong id="game-time-left"></strong> detik</h3>
+          <h1>🤔 Bendera dari negara mana?</h1>
+          <h1 id="game-quest-title"></h1>
+
+          <div id="game-select">
+            <ul>
+              <!-- <li type="select">
+                <h1>🇬🇸</h1>
+                South Georgia & South Sandwich Islands
+              </li>
+              <li type="select" class="s-1">
+                <h1>🇬🇸</h1>
+                South Georgia
+              </li>
+              <li type="select" class="s-0">
+                <h1>🇬🇸</h1>
+                South Georgia & South Sandwich Islands
+              </li>
+              <li type="select">
+                <h1>🇬🇸</h1>
+                South Georgia & South Sandwich Islands
+              </li> -->
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

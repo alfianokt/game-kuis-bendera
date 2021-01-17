@@ -46,6 +46,7 @@ li {
 
 li[type=select] {
   cursor: pointer;
+  transition: all .2s ease;
 }
 
 .title {
@@ -59,6 +60,26 @@ li[type=select] {
   display: grid;
   justify-items: center;
   align-items: center;
+}
+
+section > .content > div {
+  margin: 16px 0 16px;
+}
+
+/* select correct */
+.s-1 {
+  background-color: #00ebc7;
+}
+
+/* select wrong */
+.s-0 {
+  background-color: #ff5470;
+}
+
+#timeleft {
+  background-color: #3da9fc;
+  color: #fffffe;
+  padding: 8px 0 8px;
 }
 
 .title > * {
