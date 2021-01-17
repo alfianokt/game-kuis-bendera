@@ -148,7 +148,7 @@ const createQuest = ()=>{
   const flag_list = flags.list.filter(el => data_game.answered[el.id] == undefined || data_game.answered[el.id] == false);
   const quest_length = 4;
   const quest_list = flag_list.shuffle().slice(0, quest_length);
-  const key = Math.floor(Math.random() * (quest_length - 1));
+  const key = Math.floor(Math.random() * quest_length);
   console.log(key);
 
   [data_game.now.id, data_game.now.key] = [quest_list[key].id, key];
