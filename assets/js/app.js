@@ -1,5 +1,16 @@
 // init router : https://github.com/lukeed/navaid
-let router = navaid();
+const router = navaid();
+
+const sounds = {
+  true: new Audio('./assets/sounds/1.mp3'),
+  false: new Audio('./assets/sounds/0.mp3'),
+  correct() {
+    this.true.play();
+  },
+  wrong() {
+    this.false.play();
+  },
+};
 
 // link routes
 const routes = {
@@ -149,7 +160,6 @@ const createQuest = ()=>{
   const quest_length = 4;
   const quest_list = flag_list.shuffle().slice(0, quest_length);
   const key = Math.floor(Math.random() * quest_length);
-  console.log(key);
 
   [data_game.now.id, data_game.now.key] = [quest_list[key].id, key];
 
@@ -190,8 +200,10 @@ const createQuest = ()=>{
 
     // if correct
     if (user_feed_result) {
+      sounds.correct();
       document.querySelector(`li[data-index="${user_feed}"]`).className = 's-1';
     } else {
+      sounds.wrong();
       document.querySelector(`li[data-index="${user_feed}"]`).className = 's-0';
       document.querySelector(`li[data-index="${data_game.now.key}"]`).className = 's-1';
     }
