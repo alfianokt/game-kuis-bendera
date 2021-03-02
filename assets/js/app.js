@@ -65,7 +65,9 @@ const showPage = (name) => {
 const el_list_flags = document.querySelector('#list-flags');
 
 // count flags
-document.querySelector('#count-flags').innerText = flags.emoji.length;
+document.querySelectorAll('.count-flags').forEach(el => {
+  el.innerText = flags.emoji.length;
+});
 
 flags.list.forEach(el => {
   // what i want
